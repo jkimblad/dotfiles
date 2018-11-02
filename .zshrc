@@ -5,10 +5,11 @@
   export LD_LIBRARY_PATH=/usr/local/lib
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/jacob/.oh-my-zsh
+  export ZSH=/usr/share/oh-my-zsh
 
 # Preferred text editor
   export VISUAL="vim"
+  export EDITOR="vim"
 
 # Export environment variables
   export CC=/usr/bin/gcc
@@ -26,7 +27,7 @@
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+#DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -34,7 +35,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+ #DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
