@@ -17,6 +17,8 @@ Plugin 'irrationalistic/vim-tasks'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'yggdroot/indentline'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'ycm-core/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
