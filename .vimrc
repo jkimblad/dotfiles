@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""VUNDLE START""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""VUNDLE START""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -19,6 +19,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'yggdroot/indentline'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'kergoth/vim-bitbake'
+Plugin 'rhysd/vim-clang-format'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,7 +61,8 @@ set expandtab                       " Use spaces instead of tabs
 set shiftwidth=4                    " Number of auto-indent spaces
 set smartindent                     " Enable smart-indent
 set smarttab                        " Enable smart-tabs
-set softtabstop=4                   " Number of spaces per Tab
+set softtabstop=0                   " Number of spaces per Tab
+set noexpandtab
 autocmd FileType make set noexpandtab shiftwidth=4 softtabstop=0
 
 set ruler                           " Show row and column ruler information
@@ -82,6 +85,10 @@ set splitright
 " Bind key to open
 map <C-n> :NERDTreeToggle<CR>
 
+" YouCompleteMe
+" Map FixIt to key
+map <leader>f :YcmCompleter FixIt<CR>
+
 " Nerdtree git plugin
 " Set icons for git-nerdtree-plugin
 let g:vim_markdown_folding_disabled = 1
@@ -99,9 +106,20 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+""""""""""""""""""""""""Clang-formatter"""""""""""""""""""""""""""
+" Toggle auto formatting with <space> c:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
 
+""""""""""""""""""""""""YouCompleteMe"""""""""""""""""""""""""""
+" Use Clangd based completer
+let g:ycm_clangd_binary_path = "/home/jacob/clang/bin/clangd"
 
+" Use semantic completion
+let g:ycm_semantic_triggers =  {
+  \   'c,cpp,objc': [ 're!\w{3}', '_' ],
+  \ }
 """"""""""""""""""""""""CUSTOM FUNCTIONS"""""""""""""""""""""""
+" Draw up a diff of current file from last time it was saved
 function! s:DiffWithSaved()
   let filetype=&ft
   diffthis
@@ -110,3 +128,4 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
