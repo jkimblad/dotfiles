@@ -19,8 +19,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'yggdroot/indentline'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'kergoth/vim-bitbake'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'kergoth/vim-bitbake'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,6 +71,8 @@ set ruler                           " Show row and column ruler information
 set undolevels=1000                 " Number of undo levels
 set backspace=indent,eol,start      " Backspace behaviour
 
+set conceallevel=0                  " Dont hide formatting characters in latex, md, etc.
+let g:AutoPairsShortcutFastWrap = "<C-f>"   " Get å working in vim
 let mapleader = "\<space>"
 
 " Easier navigation between splits
