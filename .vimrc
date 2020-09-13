@@ -17,7 +17,6 @@ Plugin 'irrationalistic/vim-tasks'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'yggdroot/indentline'
-Plugin 'sheerun/vim-polyglot'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'pboettch/vim-cmake-syntax'
@@ -73,6 +72,7 @@ set backspace=indent,eol,start      " Backspace behaviour
 
 set conceallevel=0                  " Dont hide formatting characters in latex, md, etc.
 let g:AutoPairsShortcutFastWrap = "<C-f>"   " Get å working in vim
+
 let mapleader = "\<space>"
 
 " Easier navigation between splits
@@ -83,7 +83,15 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+""""""""""""""""""""""""FILE SPECIFIC SETTINGS""""""""""""""" 
+"These settings should be kept in $HOME/.vim/ftplugin/<FileType>.vim
+
+
 """"""""""""""""""""""""PLUGIN SETTING"""""""""""""""""""""""
+" YouCompleteMe
+" Clangd path
+"let g:ycm_clangd_binary_path = "/home/jacob/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangd/output/bin/clangd"
+
 " Nerdtree
 " Bind key to open
 map <C-n> :NERDTreeToggle<CR>
