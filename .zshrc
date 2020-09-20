@@ -1,12 +1,15 @@
 # Set libraries variable
-export LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 # Set preferred editor
 export VISUAL="vim"
 export EDITOR="vim"
 
-# Set standard compiler
+# Set standard compiler for C
 export CC=/usr/bin/gcc
+
+# Set standard compiler for C++
+export CXX=/usr/bin/g++
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH

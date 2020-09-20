@@ -88,17 +88,10 @@ set splitright
 
 
 """"""""""""""""""""""""PLUGIN SETTING"""""""""""""""""""""""
-" YouCompleteMe
-" Clangd path
-"let g:ycm_clangd_binary_path = "/home/jacob/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/clangd/output/bin/clangd"
-
+""""""""""""""""""""""""NerdTree"""""""""""""""""""""""
 " Nerdtree
 " Bind key to open
 map <C-n> :NERDTreeToggle<CR>
-
-" YouCompleteMe
-" Map FixIt to key
-map <leader>f :YcmCompleter FixIt<CR>
 
 " Nerdtree git plugin
 " Set icons for git-nerdtree-plugin
@@ -122,8 +115,8 @@ let g:NERDTreeIndicatorMapCustom = {
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 """"""""""""""""""""""""YouCompleteMe"""""""""""""""""""""""""""
-" Use Clangd based completer
-let g:ycm_clangd_binary_path = "/home/jacob/clang/bin/clangd"
+" Map FixIt to key
+map <leader>f :YcmCompleter FixIt<CR>
 
 " Use semantic completion
 let g:ycm_semantic_triggers =  {
