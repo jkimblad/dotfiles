@@ -113,6 +113,10 @@ fi
 alias accio="sudo apt install"
 alias clr="clear; clear; clear"
 
+# Custom functions
+# Maka a dir and cd into it
+mkcd() { mkdir -p "$@" && cd "$@"; }
+
 # Environment variables
 #export PATH="/home/jacob/opt/gcc-10.1.0/bin:$PATH"
 #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/jacob/opt/gcc-10.1.0/lib64:/home/jacob/opt/gcc-10.1.0/lib64/go/10.1.0/x86_64-unknown-linux-gnu"
