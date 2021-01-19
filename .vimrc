@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'irrationalistic/vim-tasks'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
@@ -122,6 +122,9 @@ map <leader>f :YcmCompleter FixIt<CR>
 let g:ycm_semantic_triggers =  {
   \   'c,cpp,objc': [ 're!\w{3}', '_' ],
   \ }
+""""""""""""""""""""""""NERDCommenter"""""""""""""""""""""""""""
+" Use line comment instead of block comment for C
+let g:NERDCustomDelimiters = { 'c': { 'left': '// ','right': '' } }
 """"""""""""""""""""""""CUSTOM FUNCTIONS"""""""""""""""""""""""
 " Draw up a diff of current file from last time it was saved
 function! s:DiffWithSaved()
