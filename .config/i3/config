@@ -11,7 +11,7 @@ set $mod Mod1
 exec --no-startup-id "setxkbmap -option caps:escape"
 
 # Quickly switch keyboard layout
-bindsym $mod+p exec --no-startup-id switch_layout
+bindsym $mod+p exec --no-startup-id lang_select
 
 #xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 

@@ -21,6 +21,9 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'pboettch/vim-cmake-syntax'
 Plugin 'kergoth/vim-bitbake'
+Plugin 'tpope/vim-surround'
+Plugin 'kien/ctrlp.vim'
+Plugin 'zivyangll/git-blame.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -122,10 +125,24 @@ map <leader>f :YcmCompleter FixIt<CR>
 let g:ycm_semantic_triggers =  {
   \   'c,cpp,objc': [ 're!\w{3}', '_' ],
   \ }
-""""""""""""""""""""""""NERDCommenter"""""""""""""""""""""""""""
+
+" Do not run YCM for vim
+let g:loaded_youcompleteme = 1
+
+"""""""""""""""""""""""NERDCommenter"""""""""""""""""""""""""""
 " Use line comment instead of block comment for C
 let g:NERDCustomDelimiters = { 'c': { 'left': '// ','right': '' } }
-""""""""""""""""""""""""CUSTOM FUNCTIONS"""""""""""""""""""""""
+""""""""""""""""""""""""CTRLP"""""""""""""""""""""""""""
+" Bind ctrlp to ctrl-p
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" Ignore files in /build/ to not parse an enormous amount of files in yocto
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](build)$',
+  \ }
+""""""""""""""""""""""""GIT-BLAME.vim"""""""""""""""""""""""""""
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+"""""""""""""""""""""""""CUSTOM FUNCTIONS"""""""""""""""""""""""
 " Draw up a diff of current file from last time it was saved
 function! s:DiffWithSaved()
   let filetype=&ft
@@ -134,5 +151,4 @@ function! s:DiffWithSaved()
   diffthis
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
-com! DiffSaved call s:DiffWithSaved()
 

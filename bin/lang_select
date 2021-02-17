@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+if [[ ! $(setxkbmap -query | grep us) ]]; then
+    setxkbmap us
+else
+    setxkbmap se
+fi;
+
